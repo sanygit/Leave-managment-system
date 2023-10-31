@@ -1,38 +1,53 @@
-<link rel="shortcut icon" type="image/png" href="favicon.png"/>
 <?php
 session_start();
-if(isset($_SESSION['adminuser']))
+if(isset($_SESSION['user']))
 	{
 	header('location:home.php');
 	}
 	else
 	{	
 	echo "<body>";
-	echo "<div class = 'background'>";
 	echo "<div class='textview'>";
 	echo "<center>";
-	echo "<h1 class='aa'>Leave Management System</h1>";
+	echo "<h1 class='aa'>Leave Management System</h1> ";
 	include 'navi.php';
-	echo "<h2>Admin Login</h2>";
-	echo "<form name = 'login' action = 'validator.php' method = 'post' onsubmit = 'return valid()'>";
+	echo "<h2>Client Login</h2>";
 	if(isset($_GET['err']))
 		{
-			echo "<div class = 'error'><b><u>".htmlspecialchars($_GET['err'])."</u></b></div>";
+			echo "<div class = 'error'><b><u>".htmlspecialchars($_GET['err'])."</u></b></div><br/>";
 		}
+	echo "<form name = 'login' action = 'validate.php' method = 'post' onsubmit = 'return valid()'>";
 	echo "<table>";
-	echo "<tr><td>Username :</td><td><input type = 'text' name = 'uname' class = 'textbox shadow selected' placeholder = 'Your Username'></td></tr><br/>";
-	echo "<tr><td>Password :</td><td><input type = 'password' name = 'pass' class = 'textbox shadow selected' placeholder = 'Your Password'></td></tr><br/>";
-	echo "<tr><td><input type = 'submit' value = 'Login' class = 'login-button shadow'></td></tr><br/>";
+	echo "<tr><td>Username : </td><td><input type = 'text' name = 'uname' class = 'textbox shadow selected' placeholder = 'Your Username'></td></tr><br/>";
+	echo "<tr><td>Password : </td><td><input type = 'password' name = 'pass' class = 'textbox shadow selected' placeholder = 'Your Password'></td></tr><br/>";
+	echo "<tr><td><input type = 'submit' value = 'Login' class = 'login-button shadow'></td>";
+	echo "<td><a href = 'passrecovery.php'>Forgot Your password ?</a></td></tr>";
 	echo "</table>";
 	echo "</form>";
+	echo "<p>Your Password is your date of birth in format (dd-mm-yyyy)</p>";
 	echo "</center>";
-	echo "</div>";
 	echo "</div>";
 	echo "</body>";
 	}
 ?>
 <html>
 <head>
+	
+<style>
+            .a{
+                 background-image: url(image/6.png);
+                 background-size: cover;
+            }
+            .aa{
+				background-color:lightgrey;
+                margin:auto;
+				text-decoration: solid;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 60px;
+				
+
+            }
+        </style>
 <title>::Leave Management::</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -57,20 +72,8 @@ function valid()
 			return true;
 		}
 }
+
 </script>
 
-<style>
-            
-            
-            .aa{
-                background-color:lightgrey;
-                margin:auto;
-				text-decoration: solid;
-				font-family: Arial, Helvetica, sans-serif;
-				font-size: 60px;
-				
-
-            }
-        </style>
 </head>
 </html>
