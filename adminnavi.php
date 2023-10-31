@@ -90,12 +90,18 @@ li.dropdown {
 <body>
 
 <ul>
-  <li><a href="../index.php">Home</a></li>
+  <li><a href="index.php">Admin Home</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Admin Tools</a>
     <div class="dropdown-content">
-	  <a href = "index.php">Admin</a>
-	  <a href="../client/index.php">Client</a>
+	  <a href = "register">Register A New Employee</a>
+	  <a href="searchemp.php">Remove An Employee</a>
+      <a href = "view_leaves.php">Accept/Reject Leave</a>
+	  <a href = "set_leaves.php">Set Default Leave</a>
+	  <a href = "extract_leaves.php">Extract Leaves</a>
     </div>
   </li>
+  <li><a href = "logout.php">Logout</a></li>
 </ul>
 </body>
 </html>
