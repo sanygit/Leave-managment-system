@@ -91,11 +91,7 @@ li.dropdown {
 
 <ul>
   <li><a href="../index.php">Home</a></li>
-    <div class="dropdown-content">
-	  <a href = "index.php">Admin</a>
-	  <a href="../client/index.php">Client</a>
-    </div>
-  </li>
+  
 </ul>
 </body>
 </html>
